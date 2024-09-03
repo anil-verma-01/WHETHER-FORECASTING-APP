@@ -16,10 +16,10 @@ label1.place(x=565,y=515)
 img = PhotoImage(file=r"C:\Users\anilv\Downloads\img.png")
 imgl=Label(df,image=img)
 imgl.pack()
-s=StringVar()
+v=StringVar()
 
 def whether_status(event=None):
-    city = s.get()
+    city = v.get()
     url="https://api.weatherapi.com/v1/current.json?key=f6026d8544084f08a8270106243008&q="+city
     df = requests.get(url)
     data = json.loads(df.content)
@@ -33,7 +33,7 @@ def whether_status(event=None):
 
 
 
-entbox = Entry(df,font=("arial black",12),bg="orange",width=37,textvariable=s)
+entbox = Entry(df,font=("arial black",12),bg="orange",width=37,textvariable=v)
 entbox.place(x=565,y=555)
 
 
